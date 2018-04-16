@@ -1,0 +1,139 @@
+<!doctype html>
+
+  <title>I Am Facer</title>
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>I Am Facer</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/css/normalize.css">
+        <link rel="stylesheet" href="static/css/font-awesome.css">
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/templatemo-style.css">
+        <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+        </div>
+
+        <div class="content-bg"></div>
+        <div class="bg-overlay"></div>
+
+        <!-- SITE TOP -->
+        <div class="site-top">
+            <div class="site-header clearfix">
+                <div class="container">
+                    <a href="/"class="site-brand pull-left">I Am <strong>Facer</strong></a>
+                    <div class="social-icons pull-right">
+                        <ul>
+                           <script type="text/javascript">
+                            (function(){
+                            var p = {
+                            url:location.href,
+                            showcount:'1',/*是否显示分享总数,显示：'1'，不显示：'0' */
+                            desc:'',/*默认分享理由(可选)*/
+                            summary:'',/*分享摘要(可选)*/
+                            title:'',/*分享标题(可选)*/
+                            site:'',/*分享来源 如：腾讯网(可选)*/
+                            pics:'', /*分享图片的路径(可选)*/
+                            style:'201',
+                            width:113,
+                            height:39
+                            };
+                            var s = [];
+                            for(var i in p){
+                            s.push(i + '=' + encodeURIComponent(p[i]||''));
+                            }
+                            document.write(['<a version="1.0" class="qzOpenerDiv" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?',s.join('&'),'" target="_blank">分享至QQ空间，让更多人知道我们</a>'].join(''));
+                            })();
+                            </script>
+                            <script src="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
+                        </ul>
+                    </div>
+                </div>
+            </div> <!-- .site-header -->
+            <div class="site-banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center">
+                            <h2>排行榜<span class="blue">   of</span>  <span class="green">Facer</span></h2>
+                            <p>任何意见请通过底部的联系方式进行反馈，我将尽快进行修改。<strong>右方可分享至空间，让更多人知道我们</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- .site-banner -->
+        </div> <!-- .site-top -->
+        <!-- MAIN POSTS -->
+        <div class="main-posts">
+            <div class="container">
+                <div class="row">
+                    <div class="blog-masonry masonry-true">
+                        {% for user in content %}
+                        <div class="post-masonry col-md-4 col-sm-6">
+                          <h2>{{ title }}</h2>
+                            <div class="post-thumb">
+                                <img src="{{ user }}" alt="">
+                            </div>
+                        </div> <!-- /.post-masonry -->
+                        {% endfor %}
+                    </div>
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center">
+                            <div><h1><a href="/go?name={{title}}">点击为Ta投上一票</a></h1></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="social-icons">
+                            <ul>
+                                <li><a href="http://muxxs.tecplaces.com" class="fa fa-dribbble"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="copyright-text">若有任何权利纠纷、运营建议，请联系：<span class="blue">179013204@</span><span class="green">qq.com</span></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="static/js/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="static/js/min/plugins.min.js"></script>
+        <script src="static/js/min/main.min.js"></script>
+
+        <!-- Preloader -->
+        <script type="text/javascript">
+            //<![CDATA[
+            $(window).load(function() { // makes sure the whole site is loaded
+                $('#loader').fadeOut(); // will first fade out the loading animation
+                    $('#loader-wrapper').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+                $('body').delay(350).css({'overflow-y':'visible'});
+            })
+            //]]>
+        </script>
+	<!-- templatemo 434 masonry -->
+    </body>
+</html>
